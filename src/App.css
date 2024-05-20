@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background-color: #faf0e6;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 200px;
+  position: sticky;
+  top: 0;
+  background-color: #faf0e6;
+}
+
+.logo {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.logo img {
+  width: 80px;
+}
+
+.logo h1 {
+  font-size: 3.25rem;
+}
+
+.links {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 1.75rem;
+  color: black;
+  font-weight: 300;
+}
+
+.headline {
+  padding: 0 15%;
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 75px;
+}
+
+.main-sub {
+  text-align: center;
+  margin-top: 50px;
+  padding: 0 25%;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 100px;
+}
+
+.action button {
+  background-color: #2f9edd;
+  border: none;
+  font-size: 1.75rem;
+  color: #faf0e6;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.action button:hover {
+  background-color: #2888c0;
+}
+
+.img-cont {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.sample-img {
+  background-color: #c1bbb5;
+  width: fit-content;
+  padding: 150px 600px;
+  border-radius: 10px;
+  font-size: 2rem;
+}
