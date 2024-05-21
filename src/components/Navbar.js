@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav>
-      <section className="logo">
+      <Link className="logo" to="/">
         <img src={Logo} alt="LaunchSTEM Logo" />
         <h1>LaunchSTEM</h1>
-      </section>
+      </Link>
       <section className="links">
         <Link>Link 1</Link>
         <Link>Link 2</Link>

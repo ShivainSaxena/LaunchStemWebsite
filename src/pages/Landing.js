@@ -5,7 +5,7 @@ const Landing = () => {
     <div>
       <Navbar />
       <h1 className="headline">
-        blah blah ...Main Headline... blah blah blah blah
+        Lorem ipsum ...Main Headline... Lorem ipsum dolor sit
       </h1>
       <h2 className="main-sub">
         Some smaller description about LaunchSTEM... Lorem ipsum dolor sit amet,
@@ -19,6 +19,9 @@ const Landing = () => {
       <div className="img-cont">
         <div className="sample-img">Some Image or Video or Design...</div>
       </div>
+      <h1 className="mission-statement">
+        We believe in STEM (Mission Statement)
+      </h1>
     </div>
   );
 };

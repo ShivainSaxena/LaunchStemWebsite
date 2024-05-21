@@ -6,10 +6,15 @@
   font-style: normal;
   padding: 0;
   margin: 0;
+  --main-accent: #2f9edd;
 }
 
 html {
   background-color: #faf0e6;
+}
+
+a {
+  text-decoration: none;
 }
 
 nav {
@@ -33,6 +38,7 @@ nav {
 
 .logo h1 {
   font-size: 3.25rem;
+  color: black;
 }
 
 .links {
@@ -42,7 +48,6 @@ nav {
 }
 
 .links a {
-  text-decoration: none;
   font-size: 1.75rem;
   color: black;
   font-weight: 300;
@@ -69,7 +74,7 @@ nav {
 }
 
 .action button {
-  background-color: #2f9edd;
+  background-color: var(--main-accent);
   border: none;
   font-size: 1.75rem;
   color: #faf0e6;
@@ -94,4 +99,10 @@ nav {
   padding: 150px 600px;
   border-radius: 10px;
   font-size: 2rem;
+}
+
+.mission-statement {
+  text-align: center;
+  margin-top: 100px;
+  color: var(--main-accent);
 }
