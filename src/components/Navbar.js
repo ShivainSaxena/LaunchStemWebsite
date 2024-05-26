@@ -9,10 +9,10 @@ const Navbar = () => {
         <h1>LaunchSTEM</h1>
       </Link>
       <section className="links">
-        <Link>Link 1</Link>
-        <Link>Link 2</Link>
-        <Link>Link 3</Link>
-        <Link>Link 4</Link>
+        <Link to="/about">About</Link>
+        <Link>Our Team</Link>
+        <Link>Get Started</Link>
+        <Link>Contact</Link>
       </section>
     </nav>
   );

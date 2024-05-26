@@ -7,6 +7,7 @@
   padding: 0;
   margin: 0;
   --main-accent: #2f9edd;
+  --sub-accent: #013c58;
 }
 
 html {
@@ -23,7 +24,9 @@ nav {
   padding: 10px 200px;
   position: sticky;
   top: 0;
-  background-color: #faf0e6;
+  background-color: transparent;
+  backdrop-filter: blur(1rem);
+  z-index: 3;
 }
 
 .logo {
@@ -103,6 +106,247 @@ nav {
 
 .mission-statement {
   text-align: center;
-  margin-top: 100px;
+  margin: 100px 0;
+  color: var(--sub-accent);
+}
+
+.impact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.impact h2 {
+  color: black;
+  font-size: 2.5rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 100px;
+  margin: 75px 0;
+  gap: 200px;
+}
+
+.stats article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.5rem;
+}
+
+.testimonial {
+  margin: 50px 0;
+  border-radius: 15px;
+  padding: 30px 40px;
+  border: 2px solid var(--sub-accent);
+  text-align: center;
+}
+
+.testimonial p {
+  margin-top: 10px;
+}
+
+.scroll-container {
+  width: 1200px;
+  height: 225px;
+  position: relative;
+  overflow-x: clip;
+}
+
+.carousel-primary,
+.carousel-secondary {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.carousel-primary p {
+  width: 33%;
+  margin-left: 20px;
+  border-radius: 14px;
+}
+
+.carousel-primary {
+  display: flex;
+  justify-content: space-around;
+  animation: scroll-horizontal 20s linear infinite;
+}
+
+.carousel-secondary {
+  animation: scroll-horizontal 20s linear infinite;
+  animation-delay: 10s;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+.carousel-primary:hover,
+.carousel-primary:hover ~ .carousel-secondary {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.carousel-secondary:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.scroll-container:hover > .carousel-primary:not(:hover) {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.releases {
+  display: flex;
+  gap: 100px;
+  margin: 50px 150px;
+}
+
+.releases article {
+  width: 33%;
+  text-align: center;
+  padding: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid var(--sub-accent);
+  transition: all 1s;
+  background-color: white;
+}
+
+.releases article .img {
+  width: 100%;
+  padding: 50px 0;
+  margin: 10px 0;
+  background-color: #c1bbb5;
+}
+
+.releases article:hover {
+  scale: 105%;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px 0;
+}
+
+.org-desc h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 40px 0;
+}
+
+.org-desc article {
+  --size: 1.5rem;
+  display: flex;
+  font-size: var(--size);
+  line-height: calc(var(--size) * 1.6);
+  margin: 0 150px;
+  justify-content: space-between;
+}
+
+.org-desc article p {
+  max-width: 1100px;
+}
+
+.org-desc article img {
+  width: 625px;
+  height: auto;
+}
+
+.seperator {
+  font-size: 3rem;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 150px;
+}
+
+.mission img {
+  width: 150px;
+  height: auto;
+}
+
+.mission h1 {
+  font-size: 2.5rem;
   color: var(--main-accent);
+  margin: 25px 0;
+}
+
+.mission h3 {
+  --size: 2rem;
+  font-size: var(--size);
+  line-height: calc(var(--size) * 1.6);
+  color: var(--sub-accent);
+}
+
+.program-cont {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0;
+}
+
+.programs {
+  background-color: white;
+  width: 1000px;
+  height: 500px;
+  padding: 25px 50px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.programs h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(200, 199, 199);
+  position: relative;
+}
+
+.program-list {
+  min-width: 150px;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  border-right: 1px solid rgb(200, 199, 199);
+}
+
+.program-list p {
+  cursor: pointer;
+  padding: 15px;
+}
+
+.program-list p:hover {
+  background-color: rgb(200, 200, 200);
+}
+
+.program-desc {
+  margin: 10px 15px;
+  font-size: 1.5rem;
 }
