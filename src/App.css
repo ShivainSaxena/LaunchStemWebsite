@@ -350,3 +350,60 @@ footer {
   margin: 10px 15px;
   font-size: 1.5rem;
 }
+
+.team-head {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 30px 0;
+}
+
+.team-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  margin: 0 300px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgb(200, 199, 199);
+}
+
+.team-links p {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.team-links p:hover {
+  background-color: rgb(200, 200, 200);
+}
+
+.team-members {
+  display: flex;
+  margin: 20px 200px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.team-members article {
+  width: 300px;
+  padding: 20px;
+  opacity: 0;
+  border: 2px solid var(--sub-accent);
+  border-radius: 15px;
+  text-align: center;
+  animation: appear 1.05s linear forwards;
+}
+
+.team-members article h2 {
+  margin: 20px;
+}
+
+.team-members article img {
+  width: 275px;
+  height: auto;
+}
+
+@keyframes appear {
+  to {
+    opacity: 100;
+  }
+}
