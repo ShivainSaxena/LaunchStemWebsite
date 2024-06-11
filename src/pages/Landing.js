@@ -4,24 +4,26 @@ const Landing = () => {
   return (
     <div>
       <h1 className="headline">
-        Lorem ipsum ...Main Headline... Lorem ipsum dolor sit
+        Launching the Next Generation of STEM Leaders
       </h1>
       <h2 className="main-sub">
-        Some smaller description about LaunchSTEM... Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Pellentesque venenatis lacus non dolor
-        bibendum, id suscipit dui pellentesque.
+        At LaunchSTEM, we believe that by fostering a love for STEM, we are
+        equipping students with the knowledge and skills they need to shape a
+        brighter future for themselves and the world. Together, we launch the
+        next generation of STEM leaders.
       </h2>
       <div className="action">
-        <button>Action 1</button>
-        <button>Action 2</button>
+        <button>Tutoring</button>
+        <button>Workshops</button>
+        <button>Volunteer</button>
       </div>
       <div className="img-cont">
         <div className="sample-img">Some Image or Video or Design...</div>
       </div>
-      <h1 className="mission-statement">
+      {/* <h1 className="mission-statement">
         We believe in STEM (Mission Statement) STEM yay yay yay yay yay STEM
         STEM STEM STEM
-      </h1>
+      </h1> */}
       <section className="impact">
         <h2>Overall Impact</h2>
         <div className="stats">
@@ -53,7 +55,7 @@ const Landing = () => {
 	c1.297-0.432,2.551-0.735,3.849-0.735c3.849-0.13,7.135,1.038,9.946,3.589C166.277,195.397,167.79,198.511,167.877,202.446z"
               />
             </svg>
-            <h1>Stats about workshops</h1>
+            <h1>18 classes</h1>
           </article>
           <article>
             <svg
@@ -97,7 +99,7 @@ const Landing = () => {
                 />{" "}
               </g>
             </svg>
-            <h1>Stats about tutors</h1>
+            <h1>320+ hours tutored</h1>
           </article>
           <article>
             <svg
@@ -156,7 +158,7 @@ const Landing = () => {
                 </g>{" "}
               </g>
             </svg>
-            <h1>Stats about students</h1>
+            <h1>600+ Students Reached</h1>
           </article>
         </div>
         <h2>Testimonials</h2>
@@ -164,7 +166,15 @@ const Landing = () => {
         <h2>Media Releases</h2>
         <div className="releases">
           <article>
-            <h3>Release 1</h3>
+            <h3>CBC Radio Active</h3>
+            <div className="img">Image</div>
+            <p>
+              “A trio from Old Scona high school have created a non-profit to
+              teach STEM courses to younger students.”
+            </p>
+          </article>
+          <article>
+            <h3>CTV Morning Live</h3>
             <div className="img">Image</div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -172,16 +182,7 @@ const Landing = () => {
               pellentesque.
             </p>
           </article>
-          <article>
-            <h3>Release 2</h3>
-            <div className="img">Image</div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque venenatis lacus non dolor bibendum, id suscipit dui
-              pellentesque.
-            </p>
-          </article>
-          <article>
+          {/* <article>
             <h3>Release 3</h3>
             <div className="img">Image</div>
             <p>
@@ -189,7 +190,7 @@ const Landing = () => {
               Pellentesque venenatis lacus non dolor bibendum, id suscipit dui
               pellentesque.
             </p>
-          </article>
+          </article> */}
         </div>
       </section>
     </div>
