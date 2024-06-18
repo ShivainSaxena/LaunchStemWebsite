@@ -1,5 +1,5 @@
-import Logo from "../../assets/logo3.png";
-import Name from "../../assets/logo-title.png";
+import Logo from "../../assets/logo.webp";
+import Name from "../../assets/logo-title.webp";
 import { Link } from "react-router-dom";
 import { Dropdown, Drawer } from "antd";
 import "./Navbar.css";

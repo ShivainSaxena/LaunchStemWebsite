@@ -79,7 +79,7 @@ nav {
 
 @media screen and (max-width: 1309px) {
   nav {
-    padding: 10px clamp(0.313rem, 0.009rem + 1.517vw, 1.25rem);
+    padding: 10px clamp(0.813rem, 0.009rem + 1.517vw, 1.25rem);
   }
 
   .drawer-btn svg {
