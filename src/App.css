@@ -26,3 +26,17 @@ html {
 a {
   text-decoration: none;
 }
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar {
+  border-radius: 8px;
+  background-color: var(--secondary-background);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: var(--main-accent);
+}
