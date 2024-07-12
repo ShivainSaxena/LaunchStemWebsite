@@ -1,0 +1,133 @@
+.contact-banner {
+  background-color: #39718a;
+  color: var(--main-text-color);
+  padding: 100px clamp(4.063rem, -27.48rem + 38.525vw, 18.75rem) 290px;
+  position: relative;
+}
+
+.contact-banner h1 {
+  font-size: 3rem;
+}
+
+.contact-banner p {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.contact-side {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: clamp(43.75rem, 16.906rem + 32.787vw, 56.25rem);
+  height: 500px;
+  clip-path: circle(54.3% at 73% 36%);
+}
+
+.contact-form {
+  padding-left: clamp(3.875rem, -34.781rem + 47.213vw, 21.875rem);
+  position: relative;
+  height: 400px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  background-color: var(--secondary-background);
+  gap: 30px;
+  border-radius: 10px;
+  width: fit-content;
+  position: absolute;
+  top: -225px;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  padding: 15px;
+  border-radius: 15px;
+  background: #9dc6df;
+  resize: none;
+  width: clamp(37.5rem, 10.656rem + 32.787vw, 50rem);
+  box-sizing: border-box;
+}
+
+.contact-form form input:nth-child(1) {
+  padding-left: 70px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group svg {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  width: 45px;
+}
+
+.input-group:nth-of-type(2) svg {
+  top: 13px;
+  left: 15px;
+  width: 35px;
+}
+
+.contact-form form button {
+  border: none;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  background-color: var(--main-accent);
+  color: var(--main-text-color);
+}
+
+.contact-form form button:hover {
+  background-color: #57a5d3;
+}
+
+@media screen and (max-width: 1310px) {
+  .contact-side {
+    display: none;
+  }
+
+  .contact-form {
+    display: flex;
+    justify-content: center;
+    padding-left: 0px;
+  }
+
+  .contact-banner {
+    text-align: center;
+  }
+
+  .contact-banner h1 {
+    font-size: clamp(2.5rem, 2.338rem + 0.808vw, 3rem);
+  }
+
+  .contact-banner p {
+    font-size: clamp(1.15rem, 1.037rem + 0.566vw, 1.5rem);
+  }
+
+  .contact-banner {
+    padding: 100px clamp(1.25rem, 0.341rem + 4.545vw, 4.063rem) 290px;
+  }
+
+  .contact-form form input,
+  .contact-form form textarea {
+    font-size: clamp(1.15rem, 1.037rem + 0.566vw, 1.5rem);
+
+    width: clamp(16.875rem, 10.208rem + 33.333vw, 37.5rem);
+  }
+
+  .contact-form form {
+    padding: clamp(0.938rem, 0.23rem + 3.535vw, 3.125rem);
+  }
+
+  .contact-form form button {
+    font-size: clamp(1.15rem, 1.037rem + 0.566vw, 1.5rem);
+  }
+}
