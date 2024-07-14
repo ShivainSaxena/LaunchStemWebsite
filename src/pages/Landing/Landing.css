@@ -25,7 +25,7 @@
   gap: clamp(0.938rem, -0.573rem + 5.686vw, 6.25rem);
 }
 
-.action button {
+.action a {
   background-color: var(--main-accent);
   border: none;
   font-size: clamp(1.05rem, 0.804rem + 0.789vw, 1.75rem);

@@ -7,6 +7,7 @@ import Team from "../pages/Team/Team";
 import Workshops from "../pages/Workshops/Workshops";
 import Tutoring from "../pages/Tutoring/Tutoring";
 import Contact from "../pages/Contact/Contact";
+import Volunteer from "../pages/Volunteer/Volunteer";
 import PageTransition from "./PageTransition";
 import { useEffect } from "react";
 
@@ -57,6 +58,14 @@ const Layout = () => {
           element={
             <PageTransition>
               <Tutoring />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/volunteer"
+          element={
+            <PageTransition>
+              <Volunteer />
             </PageTransition>
           }
         />

@@ -1,5 +1,5 @@
 import "./Landing.css";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Carousel } from "antd";
 import C1 from "../../assets/carousel1.webp";
 import C2 from "../../assets/carousel2.webp";
@@ -13,8 +13,6 @@ import isMobile from "is-mobile";
 import { useMediaQuery } from "react-responsive";
 
 const Landing = () => {
-  const navigate = useNavigate();
-
   const elementRef = useRef(null);
   const [width, setWidth] = useState(0);
 
@@ -53,9 +51,9 @@ const Landing = () => {
         next generation of STEM leaders.
       </h2>
       <div className="action">
-        <button onClick={() => navigate("/tutoring")}>Tutoring</button>
-        <button onClick={() => navigate("/workshops")}>Workshops</button>
-        <button onClick={() => navigate("/volunteer")}>Volunteer</button>
+        <Link to="/tutoring">Tutoring</Link>
+        <Link to="/workshops">Workshops</Link>
+        <Link to="/volunteer">Volunteer</Link>
       </div>
 
       <div className="carousel-cont">
