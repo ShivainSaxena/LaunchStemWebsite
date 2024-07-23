@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 
 * {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Lora", serif;
   font-optical-sizing: auto;
   font-style: normal;
   padding: 0;
@@ -21,6 +21,10 @@
 
 html {
   background-color: var(--background);
+}
+
+body {
+  overflow-x: hidden;
 }
 
 a {

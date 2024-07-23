@@ -3,13 +3,31 @@ import AboutIMG from "../../assets/about.webp";
 import S1W from "../../assets/service1.webp";
 import S2W from "../../assets/service2.webp";
 import "./About.css";
+import { useEffect } from "react";
 
-// TODO: Add placeholder images when the image is still loading to prevent layout shifts and better the UI
+const preloadImage = (url) => {
+  const img = new Image();
+  img.src = url;
+};
 
 const About = () => {
+  useEffect(() => {
+    preloadImage(Rocket);
+    preloadImage(AboutIMG);
+  }, []);
   return (
     <main className="about">
       <section className="org-desc">
+        <section className="mission">
+          <img src={Rocket} alt="Rocket" />
+          <h1>Our Mission</h1>
+          <h3>
+            At LaunchSTEM, we believe that by fostering a love for STEM, we are
+            equipping students with the knowledge and skills they need to shape
+            a brighter future for themselves and the world. Together, we launch
+            the next generation of STEM leaders.
+          </h3>
+        </section>
         <h1>About LaunchSTEM</h1>
         <article>
           <p>
@@ -30,16 +48,7 @@ const About = () => {
           <img src={AboutIMG} alt="LaunchSTEM Cover" />
         </article>
       </section>
-      <section className="mission">
-        <img src={Rocket} alt="Rocket" />
-        <h1>Our Mission</h1>
-        <h3>
-          At LaunchSTEM, we believe that by fostering a love for STEM, we are
-          equipping students with the knowledge and skills they need to shape a
-          brighter future for themselves and the world. Together, we launch the
-          next generation of STEM leaders.
-        </h3>
-      </section>
+
       <section className="service">
         <aside>
           <h1>Workshops</h1>
@@ -54,7 +63,7 @@ const About = () => {
         <aside>
           <h1>Tutoring</h1>
           <p>
-            Launchstem volunteers provide free stem tutoring assistance for
+            LaunchSTEM volunteers provide free STEM tutoring assistance for
             students in K-9
           </p>
         </aside>

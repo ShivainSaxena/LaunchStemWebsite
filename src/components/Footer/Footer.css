@@ -29,7 +29,7 @@ footer .head {
 }
 
 footer .head img:nth-child(1) {
-  width: 75px;
+  width: 115px;
 }
 
 footer .head img:nth-child(2) {
@@ -41,29 +41,83 @@ footer .contact {
 }
 
 footer .overview {
-  gap: 5px;
+  gap: 10px;
 }
 
 footer .overview a {
   color: var(--sub-text-color);
 }
 
-footer section:last-of-type div {
-  display: flex;
-  gap: 20px;
+footer .overview a:hover {
+  color: #ebebeb;
 }
 
-footer section:last-of-type div svg {
+footer .social h1 {
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+
+footer .social div {
+  display: flex;
+  gap: 20px;
+  align-self: center;
+}
+
+footer .social div svg {
   width: 30px;
   height: 30px;
   cursor: pointer;
 }
 
-footer ~ p {
-  background-color: var(--secondary-background);
+footer .social a {
+  color: var(--sub-text-color);
+}
+
+footer .subscribe p {
+  max-width: clamp(17.5rem, 16rem + 7.5vw, 25rem);
+  text-align: left;
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.2rem);
+}
+
+.subscribe-submit {
+  margin-top: 20px;
+  display: flex;
+}
+
+.subscribe-submit input {
+  padding: 10px;
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.2rem);
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #9dc6df;
+  border: none;
+  flex: 1;
+  width: clamp(10rem, 8.725rem + 6.375vw, 16.375rem);
+}
+
+.subscribe-submit input:focus {
+  outline: none;
+}
+
+.subscribe-submit button {
+  border-radius: 10px;
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.2rem);
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--main-accent);
+  color: var(--sub-text-color);
+}
+
+.subscribe-submit button:hover {
+  background-color: #4fafe6;
+}
+
+#copyright {
   text-align: center;
   color: var(--sub-text-color);
   padding: 10px 0;
+  margin-top: 25px;
 }
 
 @media screen and (max-width: 785px) {

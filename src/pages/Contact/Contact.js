@@ -1,7 +1,7 @@
 import "./Contact.css";
 import ContactSide from "../../assets/contactSide.png";
 import { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,6 +18,7 @@ const Contact = () => {
   // Function to run when user submits email form and display according toast for form validation
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await fetch("/.netlify/functions/sendEmail", {
         method: "POST",
@@ -29,24 +31,31 @@ const Contact = () => {
           email: "",
           message: "",
         });
-        toast.success("Message Sent!");
+        toast.success(
+          "Your email has been sent successfully! We'll get back to you soon."
+        );
       } else {
         setFormData({
           name: "",
           email: "",
           message: "",
         });
-        toast.error("Error Sending Message.");
+        toast.error(
+          "Oops! There was a problem sending your email. Please try again later."
+        );
       }
     } catch (error) {
       console.error(error);
-      toast.error("Error Sending Message.");
+      toast.error(
+        "Oops! There was a problem sending your email. Please try again later."
+      );
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <>
-      <Toaster position="top-center" reverseOrder={false} />
       <section className="contact-banner">
         <h1>Contact Us</h1>
         <p>Want to get in touch? We'd love to hear from you.</p>
@@ -116,7 +125,13 @@ const Contact = () => {
             onChange={handleChange}
             value={formData.message}
           ></textarea>
-          <button type="submit">Send Message</button>
+          <button
+            type="submit"
+            className={loading ? "loading-spinner" : ""}
+            disabled={loading}
+          >
+            Send Message
+          </button>
         </form>
       </section>
     </>

@@ -46,9 +46,9 @@
   padding: 20px;
   opacity: 0;
   border: 2px solid var(--sub-accent);
-  border-radius: 15px;
   text-align: center;
   animation: appear 1.05s linear forwards;
+  background: rgb(255, 255, 255, 17%);
 }
 
 .team-members article h2 {
@@ -61,11 +61,29 @@
   color: var(--sub-text-color);
   font-size: var(--font-size);
   line-height: calc(var(--font-size) * 1.6);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.team-members article p.clamped {
+  -webkit-line-clamp: 5; /* Number of lines to show */
+  line-clamp: 5;
+}
+
+.show-more-btn {
+  color: #aecfe0;
+  cursor: pointer;
+}
+
+.show-more-btn:hover {
+  color: #90abb9;
 }
 
 .team-members article img {
   aspect-ratio: 1.125;
   width: clamp(14.063rem, 13.438rem + 3.125vw, 17.188rem);
+  border-radius: 15px;
 }
 
 @keyframes appear {

@@ -89,6 +89,10 @@
   background-color: #57a5d3;
 }
 
+.loading-spinner {
+  cursor: wait !important;
+}
+
 @media screen and (max-width: 1310px) {
   .contact-side {
     display: none;

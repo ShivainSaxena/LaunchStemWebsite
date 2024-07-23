@@ -8,13 +8,34 @@ import C4 from "../../assets/carousel4.webp";
 import { useRef, useState, useEffect } from "react";
 import R1 from "../../assets/release1.webp";
 import R2 from "../../assets/release2.webp";
+import Splash from "../../assets/image3.webp";
 import Marquee from "react-fast-marquee";
 import isMobile from "is-mobile";
 import { useMediaQuery } from "react-responsive";
+import { TypeAnimation } from "react-type-animation";
+import { useInView } from "react-intersection-observer";
+
+const preloadImage = (url) => {
+  const img = new Image();
+  img.src = url;
+};
 
 const Landing = () => {
   const elementRef = useRef(null);
   const [width, setWidth] = useState(0);
+
+  const { ref: inViewRef, inView } = useInView({
+    threshold: 1.0, // Ensure the entire element is in view
+    triggerOnce: true, // Only trigger once
+  });
+
+  useEffect(() => {
+    preloadImage(Splash);
+    preloadImage(C1);
+    preloadImage(C2);
+    preloadImage(C3);
+    preloadImage(C4);
+  }, []);
 
   const updateWidth = () => {
     if (elementRef.current) {
@@ -43,6 +64,8 @@ const Landing = () => {
     <>
       <h1 className="headline">
         Launching the Next Generation of STEM Leaders
+        <img className="backsplash" src={Splash} alt="Backsplash" />
+        <div className="overlay"></div>
       </h1>
       <h2 className="main-sub">
         At LaunchSTEM, we believe that by fostering a love for STEM, we are
@@ -57,12 +80,24 @@ const Landing = () => {
       </div>
 
       <div className="carousel-cont">
-        <Carousel arrows className="img-carousel">
+        {inView ? (
+          <TypeAnimation
+            sequence={["Inspiring Young Minds", 500]}
+            speed={40}
+            cursor={false}
+            className="carousel-header"
+          />
+        ) : (
+          <div className="carousel-header"></div>
+        )}
+
+        <Carousel arrows className="img-carousel" autoplay>
           <img src={C1} alt="Carousel 1" />
           <img src={C2} alt="Carousel 2" />
           <img src={C3} alt="Carousel 3" />
           <img src={C4} alt="Carousel 4" />
         </Carousel>
+        <div className="checkpoint" ref={inViewRef}></div>
       </div>
 
       <section className="impact">
@@ -97,11 +132,11 @@ const Landing = () => {
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   {" "}
@@ -122,11 +157,11 @@ const Landing = () => {
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   {" "}
@@ -138,6 +173,30 @@ const Landing = () => {
                 Hands on activities were really engaging for the kids. Grateful
                 for the time and energy of the group to prepare for our
                 students.
+              </p>
+            </div>
+            <div className="testimonial">
+              <svg
+                fill="#2f9edd"
+                viewBox="0 0 32 32"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  {" "}
+                  <title>quote</title>{" "}
+                  <path d="M9.563 8.469l-0.813-1.25c-5.625 3.781-8.75 8.375-8.75 12.156 0 3.656 2.688 5.375 4.969 5.375 2.875 0 4.906-2.438 4.906-5 0-2.156-1.375-4-3.219-4.688-0.531-0.188-1.031-0.344-1.031-1.25 0-1.156 0.844-2.875 3.938-5.344zM21.969 8.469l-0.813-1.25c-5.563 3.781-8.75 8.375-8.75 12.156 0 3.656 2.75 5.375 5.031 5.375 2.906 0 4.969-2.438 4.969-5 0-2.156-1.406-4-3.313-4.688-0.531-0.188-1-0.344-1-1.25 0-1.156 0.875-2.875 3.875-5.344z"></path>{" "}
+                </g>
+              </svg>
+              <p>
+                My child has grown so much through the support of his tutor.
+                Thank you so much for this wonderful program!
               </p>
             </div>
           </Marquee>
@@ -157,11 +216,11 @@ const Landing = () => {
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   {" "}
@@ -182,11 +241,11 @@ const Landing = () => {
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   {" "}
@@ -198,6 +257,30 @@ const Landing = () => {
                 Hands on activities were really engaging for the kids. Grateful
                 for the time and energy of the group to prepare for our
                 students.
+              </p>
+            </div>
+            <div className="testimonial">
+              <svg
+                fill="#2f9edd"
+                viewBox="0 0 32 32"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  {" "}
+                  <title>quote</title>{" "}
+                  <path d="M9.563 8.469l-0.813-1.25c-5.625 3.781-8.75 8.375-8.75 12.156 0 3.656 2.688 5.375 4.969 5.375 2.875 0 4.906-2.438 4.906-5 0-2.156-1.375-4-3.219-4.688-0.531-0.188-1.031-0.344-1.031-1.25 0-1.156 0.844-2.875 3.938-5.344zM21.969 8.469l-0.813-1.25c-5.563 3.781-8.75 8.375-8.75 12.156 0 3.656 2.75 5.375 5.031 5.375 2.906 0 4.969-2.438 4.969-5 0-2.156-1.406-4-3.313-4.688-0.531-0.188-1-0.344-1-1.25 0-1.156 0.875-2.875 3.875-5.344z"></path>{" "}
+                </g>
+              </svg>
+              <p>
+                My child has grown so much through the support of his tutor.
+                Thank you so much for this wonderful program!
               </p>
             </div>
           </Marquee>
