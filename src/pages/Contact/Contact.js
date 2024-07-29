@@ -1,15 +1,26 @@
 import "./Contact.css";
-import ContactSide from "../../assets/contactSide.png";
-import { useState } from "react";
+import ContactSide from "../../assets/contactSide.webp";
+import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
+import Loader from "../../components/Loader/Loader";
 
 const Contact = () => {
+  const [picIsLoading, setPicIsLoading] = useState(true);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = ContactSide; // Use the imported image
+    img.onload = () => {
+      setPicIsLoading(false);
+    };
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -53,6 +64,10 @@ const Contact = () => {
       setLoading(false);
     }
   };
+
+  if (picIsLoading) {
+    return <Loader />;
+  }
 
   return (
     <>

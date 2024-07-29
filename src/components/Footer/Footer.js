@@ -78,21 +78,21 @@ const Footer = () => {
               <a
                 href="https://www.instagram.com/launchstem/"
                 target="_blank"
-                rel="norefferrer"
+                rel="noreferrer"
               >
                 <SiInstagram />
               </a>
               <a
                 href="https://www.linkedin.com/company/launchstem/?viewAsMember=true"
                 target="_blank"
-                rel="norefferrer"
+                rel="noreferrer"
               >
                 <SiLinkedin />
               </a>
               <a
                 href="https://linktr.ee/launchstem"
                 target="_blank"
-                rel="norefferrer"
+                rel="noreferrer"
               >
                 <SiLinktree />
               </a>

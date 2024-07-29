@@ -66,13 +66,13 @@ const Workshops = () => {
         <div className="background">
           Fill Out The Form Below:
           <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdsyeeOK2u52CthhWLywUFyxKH7MY0dUKFLX-zOUShcgHSPHA/viewform?embedded=true"
+            title="Workshop Form"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfUwukkkmMReL-oWgyt9RMkOXRQO4-PTvGbAqwuwETRLM_CvA/viewform?embedded=true"
             width={iframeWidth}
             height="800"
             frameborder="0"
             marginheight="0"
             marginwidth="0"
-            title="Workshop Form"
           >
             Loading…
           </iframe>

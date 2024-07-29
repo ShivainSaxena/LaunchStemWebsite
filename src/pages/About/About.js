@@ -3,18 +3,24 @@ import AboutIMG from "../../assets/about.webp";
 import S1W from "../../assets/service1.webp";
 import S2W from "../../assets/service2.webp";
 import "./About.css";
-import { useEffect } from "react";
-
-const preloadImage = (url) => {
-  const img = new Image();
-  img.src = url;
-};
+import { useEffect, useState } from "react";
+import Loader from "../../components/Loader/Loader";
 
 const About = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    preloadImage(Rocket);
-    preloadImage(AboutIMG);
+    const img = new Image();
+    img.src = Rocket; // Use the imported image
+    img.onload = () => {
+      setIsLoading(false);
+    };
   }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <main className="about">
       <section className="org-desc">
@@ -33,17 +39,15 @@ const About = () => {
           <p>
             LaunchSTEM is a Non-Profit Organization that focuses on empowering a
             diverse range of students to gain interest in STEM related topics.
-            Our organization aims to intrigue students with educational material
-            taught in various ways, such as hands-on activities, speaking
-            activities, and presentations, to deepen their understanding on the
-            topics. We strive to provide insight to multiple subjects of
+            LaunchSTEM consists of two programs: STEM Workshops & STEM Tutoring.
+            STEM Workshops strive to provide insight to multiple subjects of
             interest with the goal of furthering their perspective on all the
-            opportunities STEM provides that can aid them in the future. Our
-            presentations are designed in accordance with the Alberta curriculum
-            and can be adjusted to educator preferences. LaunchSTEM provides
-            classes of all lengths and durations. We provide additional tutoring
-            and assistance outside of class time for any students who may
-            require it, all free of cost.
+            opportunities STEM provides that can aid them in the future. STEM
+            tutoring is assistance outside of class for math and science help,
+            all free of cost. Our organization aims to intrigue students with
+            educational material taught in various ways, such as hands-on
+            activities, speaking activities, and presentations, to deepen their
+            understanding on the topics.
           </p>
           <img src={AboutIMG} alt="LaunchSTEM Cover" />
         </article>
@@ -53,8 +57,11 @@ const About = () => {
         <aside>
           <h1>Workshops</h1>
           <p>
-            Launch STEM provides free workshops to public schools which consist
-            of engaging material and hands-on activites
+            LaunchSTEM provides free workshops to public schools which consist
+            of engaging material and hands-on activities. Our presentations are
+            designed in accordance with the Alberta curriculum and can be
+            adjusted to educator preferences. Please contact us if you would
+            like more information.
           </p>
         </aside>
         <img src={S1W} alt="Workshop" />
@@ -64,7 +71,8 @@ const About = () => {
           <h1>Tutoring</h1>
           <p>
             LaunchSTEM volunteers provide free STEM tutoring assistance for
-            students in K-9
+            students in K-9. This is an online program that occurs outside
+            school hours. Please contact us if you would like more information.
           </p>
         </aside>
         <img src={S2W} alt="Workshop" />

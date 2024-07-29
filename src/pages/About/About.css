@@ -33,9 +33,6 @@
   flex-direction: column;
   align-items: center;
   margin: 50px clamp(1.25rem, -0.375rem + 8.125vw, 9.375rem) 0;
-  /* padding: 50px clamp(1.25rem, -0.375rem + 8.125vw, 9.375rem) 0; */
-  /* border-top: 2px solid white;
-  border-bottom: 2px solid white; */
 }
 
 .mission img {
@@ -75,8 +72,8 @@
 }
 
 .service aside {
-  width: clamp(23.875rem, 22.773rem + 1.856vw, 25rem);
-  margin: 0 clamp(3.75rem, -1.759rem + 9.278vw, 9.375rem);
+  width: clamp(47rem, 38.41rem + 10.492vw, 51rem);
+  margin: 0 clamp(3rem, -10.691rem + 16.721vw, 9.375rem);
 }
 
 .service:last-of-type aside {
@@ -115,7 +112,7 @@
   }
 }
 
-@media screen and (max-width: 949px) {
+@media screen and (max-width: 1310px) {
   .service,
   .service:last-of-type {
     display: flex;
@@ -127,7 +124,7 @@
   .service aside,
   .service:last-of-type aside {
     text-align: center;
-    width: clamp(18rem, 15.011rem + 14.944vw, 23.875rem);
+    width: clamp(18rem, 7.657rem + 51.717vw, 50rem);
   }
 
   .service img {

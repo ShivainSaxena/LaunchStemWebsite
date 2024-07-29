@@ -5,6 +5,7 @@ import C1 from "../../assets/carousel1.webp";
 import C2 from "../../assets/carousel2.webp";
 import C3 from "../../assets/carousel3.webp";
 import C4 from "../../assets/carousel4.webp";
+import C5 from "../../assets/carousel5.webp";
 import { useRef, useState, useEffect } from "react";
 import R1 from "../../assets/release1.webp";
 import R2 from "../../assets/release2.webp";
@@ -14,13 +15,11 @@ import isMobile from "is-mobile";
 import { useMediaQuery } from "react-responsive";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
-
-const preloadImage = (url) => {
-  const img = new Image();
-  img.src = url;
-};
+import Loader from "../../components/Loader/Loader";
 
 const Landing = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   const elementRef = useRef(null);
   const [width, setWidth] = useState(0);
 
@@ -30,11 +29,11 @@ const Landing = () => {
   });
 
   useEffect(() => {
-    preloadImage(Splash);
-    preloadImage(C1);
-    preloadImage(C2);
-    preloadImage(C3);
-    preloadImage(C4);
+    const img = new Image();
+    img.src = C1; // Use the imported image
+    img.onload = () => {
+      setIsLoading(false);
+    };
   }, []);
 
   const updateWidth = () => {
@@ -60,6 +59,10 @@ const Landing = () => {
     query: "(max-width: 1000px)",
   });
 
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <>
       <h1 className="headline">
@@ -83,7 +86,7 @@ const Landing = () => {
         {inView ? (
           <TypeAnimation
             sequence={["Inspiring Young Minds", 500]}
-            speed={40}
+            speed={50}
             cursor={false}
             className="carousel-header"
           />
@@ -96,6 +99,7 @@ const Landing = () => {
           <img src={C2} alt="Carousel 2" />
           <img src={C3} alt="Carousel 3" />
           <img src={C4} alt="Carousel 4" />
+          <img src={C5} alt="Carousel 5" />
         </Carousel>
         <div className="checkpoint" ref={inViewRef}></div>
       </div>
