@@ -73,8 +73,11 @@ const Contact = () => {
     <>
       <section className="contact-banner">
         <h1>Contact Us</h1>
-        {/* <p>Want to get in touch? We'd love to hear from you. And if you're feeling generous we happily accept donations as well!</p> */}
-        <p>Want to get in touch? We'd love to hear from you.</p>
+        <p>
+          Want to get in touch? We'd love to hear from you. <br />
+          We are happy to accept donations for our cause.
+        </p>
+        {/* <p>Want to get in touch? We'd love to hear from you.</p> */}
         <img src={ContactSide} alt="Contact Side" className="contact-side" />
       </section>
       <section className="contact-form">
