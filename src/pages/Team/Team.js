@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import ShivainW from "../../assets/shivain.webp";
 import EmanW from "../../assets/eman.webp";
-import SarasW from "../../assets/saras.webp";
 import AmeenaW from "../../assets/ameena.webp";
 import ManuthiW from "../../assets/manuthi.webp";
 import RuchiW from "../../assets/ruchi.webp";
@@ -86,10 +85,10 @@ const Team = () => {
         overflow: true,
       },
       {
-        name: "Saras",
+        name: "Ameena",
         description:
-          "I'm a 17 year old grade 11 student at Old Scona Academic. I joined LaunchSTEM because I genuinely believe that every child deserves access to quality education and STEM resources no matter their background. I believe that LaunchSTEM will be the reason that many kids will actually get the education and STEM opportunities they deserve. My free time is spent by a combination of full IB, building hearthear.com, and being Old Scona's resident business club President.",
-        image: SarasW,
+          "Hello! My name is Ameena, and I'm a Grade 11 student at Old Scona Academic. I joined the LaunchSTEM Team because I want to make STEM accessible to kids across Edmonton. I love fighting for equality, learning about biology, and listening to Taylor Swift!",
+        image: AmeenaW,
         overflow: true,
       },
     ],
@@ -99,13 +98,6 @@ const Team = () => {
         description:
           "Hi! I’m Isabelle, a grade 10 student at Old Scona Academic and I am thrilled to be apart of the LaunchSTEM team! Science is super fun and I want to share that joy with younger kids!! That’s why I joined LaunchSTEM because I want to help these students to learn to love science, which is exactly what they do by offering fun, interactive ways to learn. I enjoy scrapbooking, bullet journaling, listening to music and collecting a variety of things!",
         image: IsabelleW,
-        overflow: true,
-      },
-      {
-        name: "Ameena",
-        description:
-          "Hello! My name is Ameena, and I'm a Grade 11 student at Old Scona Academic. I joined the LaunchSTEM Team because I want to make STEM accessible to kids across Edmonton. I love fighting for equality, learning about biology, and listening to Taylor Swift!",
-        image: AmeenaW,
         overflow: true,
       },
       {
