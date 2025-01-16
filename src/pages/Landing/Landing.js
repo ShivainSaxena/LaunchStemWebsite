@@ -307,7 +307,7 @@ const Landing = () => {
             </article>
           </a>
           <a
-            href="https://edmonton.ctvnews.ca/video?clipId=2906477"
+            href="https://www.ctvnews.ca/edmonton/video/2024/12/27/sponsored-giving-back-to-the-community-with-stem/"
             target="_blank"
             rel="noreferrer"
           >
