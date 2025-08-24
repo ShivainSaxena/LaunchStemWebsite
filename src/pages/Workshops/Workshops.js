@@ -67,7 +67,7 @@ const Workshops = () => {
           Fill Out The Form Below:
           <iframe
             title="Workshop Form"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfUwukkkmMReL-oWgyt9RMkOXRQO4-PTvGbAqwuwETRLM_CvA/viewform?embedded=true"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdt8f71vIltNXm4ITRyMcsY-Wv6pKFWbY7vDY3ioM1qQBLuwQ/viewform?embedded=true"
             width={iframeWidth}
             height="800"
             frameborder="0"
