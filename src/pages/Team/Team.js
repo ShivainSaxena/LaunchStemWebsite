@@ -9,7 +9,6 @@ import IsabelleW from "../../assets/isabelle.webp";
 import ShashwataW from "../../assets/shashwata.webp";
 import JazzyW from "../../assets/jaz.webp";
 import AyeshaW from "../../assets/ayesha.webp";
-import JadyW from "../../assets/jady.webp";
 import AryanW from "../../assets/aryan.webp";
 import EthanW from "../../assets/ethan.webp";
 import StuthiW from "../../assets/stuthi.webp";
@@ -55,13 +54,6 @@ const Team = () => {
         image: AyeshaW,
         overflow: true,
       },
-      {
-        name: "Jady",
-        description:
-          "Hi, I’m Jady and I’m one of the co-presidents of LaunchSTEM. This fall, I'll be studying Mechanical Engineering at the University of Waterloo. I enjoy crocheting, hiking, and all things creative. LaunchSTEM has fostered a sense of community and love for STEM among young students and it has been extremely rewarding.",
-        image: JadyW,
-        overflow: true,
-      },
     ],
     outreach: [
       {
@@ -101,29 +93,8 @@ const Team = () => {
         image: BlankW,
         overflow: true,
       },
-      {
-        name: "Ameena",
-        description:
-          "Hello! My name is Ameena, and I'm a Grade 11 student at Old Scona Academic. I joined the LaunchSTEM Team because I want to make STEM accessible to kids across Edmonton. I love fighting for equality, learning about biology, and listening to Taylor Swift!",
-        image: AmeenaW,
-        overflow: true,
-      },
     ],
     marketing: [
-      {
-        name: "Isabelle",
-        description:
-          "Hi! I’m Isabelle, a grade 10 student at Old Scona Academic and I am thrilled to be apart of the LaunchSTEM team! Science is super fun and I want to share that joy with younger kids!! That’s why I joined LaunchSTEM because I want to help these students to learn to love science, which is exactly what they do by offering fun, interactive ways to learn. I enjoy scrapbooking, bullet journaling, listening to music and collecting a variety of things!",
-        image: IsabelleW,
-        overflow: true,
-      },
-      {
-        name: "Arunima",
-        description:
-          "Hi, my name is Arunima Chowdhury.! I’m an 11th grade student at Lillian Osborne High School. I joined LaunchSTEM due to my passion for science, interest in sharing STEM education to kids, and desire to be part of a team of like-minded people my age. In my free time, I enjoy reading, baking, cooking, making playlists, and watching movies.",
-        image: ArunimaW,
-        overflow: true,
-      },
       {
         name: "Chelsea",
         description:
@@ -143,6 +114,13 @@ const Team = () => {
         description:
           "Hi everyone, I’m Iman and I am a grade 11 student in Tempo School. I am so happy and honored to be a part of Launchstem and as well as be a part of the Directors of Marketing at LaunchSTEM. I joined Launchstem after reading and hearing about the motivations behind why it was made and it was very inspiring. I am eager to collaborate with the teams to enhance and expand access to STEM education for younger students. Outside of academics, I love reading, journalling, scrolling on pinterest, and spending time with my family.",
         image: ImanW,
+        overflow: true,
+      },
+      {
+        name: "Shivain",
+        description:
+          "Hi, I'm Shivain! As the website developer for LaunchSTEM, I joined to dive into the fascinating world of STEM and connect with the incredible people involved. I'll be studying Computer Engineering at the University of Waterloo this fall, and I'm excited to help make STEM more accessible and engaging for everyone.",
+        image: ShivainW,
         overflow: true,
       },
     ],
@@ -192,15 +170,6 @@ const Team = () => {
         image: GajaniW,
       },
     ],
-    online: [
-      {
-        name: "Shivain",
-        description:
-          "Hi, I'm Shivain! As the website developer for LaunchSTEM, I joined to dive into the fascinating world of STEM and connect with the incredible people involved. I'll be studying Computer Engineering at the University of Waterloo this fall, and I'm excited to help make STEM more accessible and engaging for everyone.",
-        image: ShivainW,
-        overflow: true,
-      },
-    ],
   };
 
   return (
@@ -244,12 +213,6 @@ const Team = () => {
           >
             Tutoring
           </p>
-          <p
-            onClick={() => setShow("online")}
-            className={show === "online" ? "selected" : ""}
-          >
-            Online
-          </p>
         </section>
       </MediaQuery>
       <MediaQuery maxWidth={985}>
@@ -285,10 +248,6 @@ const Team = () => {
               {
                 value: "tutoring",
                 label: "Tutoring",
-              },
-              {
-                value: "online",
-                label: "Online",
               },
             ]}
           />
