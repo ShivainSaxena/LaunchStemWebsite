@@ -1,7 +1,7 @@
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 10px clamp(1.25rem, -34.267rem + 38.14vw, 11.5rem);
+  padding: 6px clamp(1.25rem, -22.4rem + 25.4vw, 6.5rem);
   position: sticky;
   top: 0;
   background-color: #0c4d6b;
@@ -11,19 +11,20 @@ nav {
 .logo-group {
   display: flex;
   align-items: center;
+  gap: 6px;
 }
 
 .logo-group img:nth-child(1) {
-  width: 100px;
+  width: 64px;
 }
 
 .logo-group img:nth-child(2) {
-  width: 300px;
+  width: 210px;
 }
 
 .links {
   display: flex;
-  gap: 60px;
+  gap: 36px;
   align-items: center;
 }
 
@@ -34,12 +35,16 @@ nav {
 
 .links a,
 .drawer-links a {
-  --font-size: 1.5rem;
+  --font-size: 1.05rem;
   font-size: var(--font-size);
   line-height: calc(var(--font-size) * 1.6);
   color: var(--main-text-color);
   font-weight: 300;
   position: relative;
+}
+
+.drawer-links a {
+  --font-size: 1.25rem;
 }
 
 .drawer-links a {

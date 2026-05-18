@@ -53,6 +53,11 @@ const Navbar = () => {
       name: "Tutoring",
     },
     {
+      link: "https://learn.launchstem.org/",
+      name: "Learning Modules",
+      external: true,
+    },
+    {
       link: "/volunteer",
       name: "Volunteer Now",
     },
@@ -85,6 +90,14 @@ const Navbar = () => {
             >
               <Link>Programs</Link>
             </Dropdown>
+            <a
+              className="underline-anim"
+              href="https://learn.launchstem.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learning Modules
+            </a>
             <Link className="underline-anim" to="/volunteer">
               Volunteer Now
             </Link>
@@ -113,6 +126,19 @@ const Navbar = () => {
           >
             <section className="drawer-links">
               {mobileLinks.map((o, i) => {
+                if (o.external) {
+                  return (
+                    <a
+                      key={i}
+                      href={o.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setOpen(false)}
+                    >
+                      {o.name}
+                    </a>
+                  );
+                }
                 return (
                   <Link key={i} to={o.link} onClick={() => setOpen(false)}>
                     {o.name}
