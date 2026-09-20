@@ -85,3 +85,15 @@
   width: 80px;
   height: auto;
 }
+
+.wform .background {
+  max-width: 700px;
+  margin: 0 20px 50px;
+  line-height: 1.6;
+}
+
+.contact-email {
+  color: var(--main-accent);
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}

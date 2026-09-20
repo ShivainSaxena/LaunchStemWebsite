@@ -3,26 +3,8 @@ import { IoSchoolOutline } from "react-icons/io5";
 import { SlGlobe } from "react-icons/sl";
 import { TfiAgenda } from "react-icons/tfi";
 import isMobile from "is-mobile";
-import { useMediaQuery } from "react-responsive";
 
 const Workshops = () => {
-  const large = useMediaQuery({ query: "(max-width: 882px)" });
-  const medium = useMediaQuery({ query: "(max-width: 658px)" });
-  const small = useMediaQuery({ query: "(max-width: 498px)" });
-
-  // Determine the width based on the matched media query
-  let iframeWidth;
-
-  if (small) {
-    iframeWidth = 275;
-  } else if (medium) {
-    iframeWidth = 350;
-  } else if (large) {
-    iframeWidth = 500;
-  } else {
-    iframeWidth = 700; // Default width for screens larger than 882px
-  }
-
   return (
     <>
       <h1 className="heading">Workshops</h1>
@@ -64,18 +46,13 @@ const Workshops = () => {
       </section>
       <section className="wform">
         <div className="background">
-          Fill Out The Form Below:
-          <iframe
-            title="Workshop Form"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdt8f71vIltNXm4ITRyMcsY-Wv6pKFWbY7vDY3ioM1qQBLuwQ/viewform?embedded=true"
-            width={iframeWidth}
-            height="800"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-          >
-            Loading…
-          </iframe>
+          <p>
+            If you are a teacher or educator interested in our workshops, please
+            email{" "}
+            <a className="contact-email" href="mailto:launchstem.org@gmail.com">
+              launchstem.org@gmail.com
+            </a>
+          </p>
         </div>
       </section>
     </>
