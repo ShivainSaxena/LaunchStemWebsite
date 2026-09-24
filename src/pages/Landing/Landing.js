@@ -6,7 +6,7 @@ import C2 from "../../assets/carousel2.webp";
 import C3 from "../../assets/carousel3.webp";
 import C4 from "../../assets/carousel4.webp";
 import C5 from "../../assets/carousel5.webp";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import R1 from "../../assets/release1.webp";
 import R2 from "../../assets/release2.webp";
 import Splash from "../../assets/image3.webp";
@@ -16,16 +16,66 @@ import { useMediaQuery } from "react-responsive";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
 import Loader from "../../components/Loader/Loader";
+import { IoPeopleOutline, IoTimeOutline, IoSchoolOutline } from "react-icons/io5";
+
+const stats = [
+  { icon: <IoPeopleOutline />, value: 230, suffix: "+", label: "Volunteers" },
+  { icon: <IoTimeOutline />, value: 513, suffix: "", label: "Hours Tutored" },
+  {
+    icon: <IoSchoolOutline />,
+    value: 1000,
+    suffix: "+",
+    label: "Students Reached",
+  },
+];
+
+const COUNT_DURATION = 1800;
+
+const CountUp = ({ value, suffix, start }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!start) return;
+
+    // Anyone who asked for less motion just gets the final number.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setCount(value);
+      return;
+    }
+
+    let frame;
+    const begin = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - begin) / COUNT_DURATION, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(eased * value));
+      if (progress < 1) frame = requestAnimationFrame(tick);
+    };
+
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [start, value]);
+
+  return (
+    <strong>
+      {count}
+      {suffix}
+    </strong>
+  );
+};
 
 const Landing = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  const elementRef = useRef(null);
-  const [width, setWidth] = useState(0);
-
   const { ref: inViewRef, inView } = useInView({
     threshold: 1.0, // Ensure the entire element is in view
     triggerOnce: true, // Only trigger once
+  });
+
+  const { ref: statsRef, inView: statsInView } = useInView({
+    threshold: 0.35,
+    triggerOnce: true,
   });
 
   useEffect(() => {
@@ -33,25 +83,6 @@ const Landing = () => {
     img.src = C1; // Use the imported image
     img.onload = () => {
       setIsLoading(false);
-    };
-  }, []);
-
-  const updateWidth = () => {
-    if (elementRef.current) {
-      setWidth(elementRef.current.getBoundingClientRect().width);
-    }
-  };
-
-  useEffect(() => {
-    // Set the initial width
-    updateWidth();
-
-    // Update the width on window resize
-    window.addEventListener("resize", updateWidth);
-
-    // Clean up event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", updateWidth);
     };
   }, []);
 
@@ -106,19 +137,14 @@ const Landing = () => {
 
       <section className="impact">
         <h2>Overall Impact</h2>
-        <div className="stats">
-          <article style={{ minWidth: width }}>
-            <strong>18</strong>
-            <h1>Classes</h1>
-          </article>
-          <article style={{ minWidth: width }}>
-            <strong>320+</strong>
-            <h1>Hours Tutored</h1>
-          </article>
-          <article ref={elementRef}>
-            <strong>600+</strong>
-            <h1>Students Reached</h1>
-          </article>
+        <div className="stats" ref={statsRef}>
+          {stats.map(({ icon, value, suffix, label }) => (
+            <article key={label}>
+              {icon}
+              <CountUp value={value} suffix={suffix} start={statsInView} />
+              <h1>{label}</h1>
+            </article>
+          ))}
         </div>
         <h2>Testimonials</h2>
         {isMobile() ? (
